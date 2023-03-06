@@ -19,21 +19,21 @@ Thumbnails are generated automatically and cached in memory.
 All maps should be captured in a way where they can be described from one image. Images should **NOT** be sized up via image editing at all! Please use the concommand `poster X` to take your screenshots (X is a render size multiplier, I typically set it to 2), and size down the screenshot in image editing software.
 
 Alongside each preview should be a .json file containing some details about the map itself. A `?` denotes that a field that is optional and can either be replaced with `null` or not included.
-```json
+```jsonc
 {
     "name": "gm_construct", /** @type {string} The name of the map as it is loaded by the game. */
-	"version": 13, /** @type {(string|number)?} A version representation. */
-	"sha1": "1e5ee9f598b6e82f290ddc233fad484c1945e186" /** @type {string?} A SHA1 hash of the map; NOT the .gma file the map may have come from, but of the actual .bsp file! */
+    "version": 13, /** @type {(string|number)?} A version representation. */
+    "sha1": "1e5ee9f598b6e82f290ddc233fad484c1945e186" /** @type {string?} A SHA1 hash of the map; NOT the .gma file the map may have come from, but of the actual .bsp file! */
     "description": "An empty, semi-detailed construction map.", /** @type {string} A short(ish) description of the map. */
     "authors": [ /** @type {AuthorInfo[]? A list of authors of the map. */
         {
             "name": "Facepunch",
             "steamid": null,
-			"url": "https://gmod.facepunch.com"
+            "url": "https://gmod.facepunch.com"
         }
     ],
     "gamemode": "sandbox", /** @type {string} The gamemode that this map is intended for. */
-	"playercount": 24 /** @type {number} The intended server player count for this map. */
+    "playercount": 24 /** @type {number} The intended server player count for this map. */
 }
 
 /**
