@@ -1,0 +1,26 @@
+:root {
+    --highlight-primary: rgba(255, 175, 255);
+}
+
+body {
+    padding: 2em;
+    font-family: "Roboto Mono", monospace;
+}
+
+h1 {
+    margin: 0;
+}
+
+#top {
+    color: rgb(255, 0, 255);
+    margin-top: 0;
+}
+
+#header {
+    margin: var(--font-size) 0;
+}
+
+#header > * {
+    display: inline-block;
+    vertical-align: middle;
+}

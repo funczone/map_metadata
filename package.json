@@ -1,0 +1,20 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "@tinyhttp/app": "^2.0.29",
+    "eta": "^2.0.1",
+    "milliparsec": "^2.2.2",
+    "pino": "^8.11.0",
+    "pino-pretty": "^9.4.0",
+    "sirv": "^2.0.2"
+  }
+}

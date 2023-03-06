@@ -1,0 +1,48 @@
+<% layout("../template.eta") %>
+
+<div id="header">
+<img src="assets/cordon.png" style="height: 32px; margin-right: 0.5em;"/>
+<h1 id="top">maps.func.zone</h1>
+</div>
+
+<p>
+    Hello! This is a collection of map screenshots for use on the func.zone TTT server.
+    <br>    
+    <b>Developers, users, and contributors:</b> You're encouraged to join the func.zone discord <b><a href="https://func.zone/discord/">here</a></b> (visit #dev) for discussion on the project.
+    <br>
+    <a href="https://github.com/funczone/map_metadata">Source</a> | <a href="https://func.zone">Home</a>
+</p>
+
+<h2>API Routes</h2>
+<ul>
+    <li><code>/mp/</code>: Map previews; 1920x1080 png.</li>
+    <li><code>/mt/</code>: Map thumbnails; 640x360 jpg.</li>
+    <li><code>/mm/</code>: Map metadata; json.</li>
+</ul>
+
+<h2>Maps</h2>
+<p>Last updated: <%= new Date(it.data.last_updated).toISOString() %></p>
+<ul>
+    <%
+    // this is stupid
+    function gen_list_element(map) {
+        let str = "";
+
+        str += (map.image ? `<a href="/mp/${map.name}">${map.name}</a>` : map.name);
+        str += " (";
+        str += (map.image ? `<a href="/mt/${map.name}">thumb</a>` : "thumb");
+        str += ", "
+        str += (map.data ? `<a href="/mm/${map.name}">meta</a>` : "meta");
+        str += ")"; 
+
+        return str;
+    }
+    %>
+    <% for(const name in it.data.maps) { %>
+    <li>
+        <%~ gen_list_element(it.data.maps[name]) %>
+    </li>
+    <% } %>
+</ul>
+
+<a href="#top">Top</a>
