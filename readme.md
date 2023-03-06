@@ -24,8 +24,8 @@ Alongside each preview should be a .json file containing some details about the 
     "name": "gm_construct", /** @type {string} The name of the map as it is loaded by the game. */
     "version": 13, /** @type {(string|number)?} A version representation. */
     "sha1": "1e5ee9f598b6e82f290ddc233fad484c1945e186" /** @type {string?} A SHA1 hash of the map; NOT the .gma file the map may have come from, but of the actual .bsp file! */
-    "description": "An empty, semi-detailed construction map.", /** @type {string} A short(ish) description of the map. */
-    "authors": [ /** @type {AuthorInfo[]? A list of authors of the map. */
+    "description": "An empty, semi-detailed construction map.", /** @type {string?} A short(ish) description of the map. */
+    "authors": [ /** @type {AuthorInfo[]?} A list of authors of the map. */
         {
             "name": "Facepunch",
             "steamid": null,
@@ -33,7 +33,7 @@ Alongside each preview should be a .json file containing some details about the 
         }
     ],
     "gamemode": "sandbox", /** @type {string} The gamemode that this map is intended for. */
-    "playercount": 24 /** @type {number} The intended server player count for this map. */
+    "playercount": 24 /** @type {number?} The intended server player count for this map. */
 }
 
 /**
