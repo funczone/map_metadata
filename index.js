@@ -15,8 +15,8 @@ import { spawn } from "node:child_process";
 import { log } from "./log.js";
 
 const config = {
-    port: 9999,
-    magick_settings: ["-resize", "640x360"]
+    port: 3000,
+    magick_settings: ["-resize", "640x360"],
 }
 
 const data = {
@@ -106,8 +106,10 @@ const route = (req, res, next) => {
     }
 
     // Strip the respective extension if it was provided.
-    if(route == "mp" || route == "mt") {
+    if(route == "mp") {
         map_name = map_name.split(".png")[0];
+    } else if(route == "mt") {
+        map_name = map_name.split(".jpg")[0];
     } else if(route == "mm") {
         map_name = map_name.split(".json")[0];
     }
@@ -147,7 +149,7 @@ const route = (req, res, next) => {
 
             // Size down the image to 360p. This currently uses imagemagick to do the work.
             const out = [];
-            const magick = spawn("magick", ["png:-", ...config.magick_settings, "jpg:-"]);
+            const magick = spawn("convert", ["png:-", ...config.magick_settings, "jpg:-"]);
             magick.stdout.on("data", (chunk) => out.push(chunk));
             magick.stdout.on("error", (e) => {
                 log.error(e);
