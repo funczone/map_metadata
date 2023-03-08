@@ -12,11 +12,11 @@ Put all data in the `data` folder.
 ## `data/`
 The data folder holds all the data that the server will serve. 
 
-Previews are full size previews of map images, named the same thing as the map itself. All images must be formatted as `.png`, and must be 1080p (1920×1080 pixels).
+Previews are full size previews of map images, named the same thing as the map itself. All images must be formatted as `.png`, and must be 1080p (1920×1080 pixels). Thumbnails are automatically generated 360p jpgs that are cached in memory.
 
-Thumbnails are generated automatically and cached in memory.
-
-All maps should be captured in a way where they can be described from one image. Images should **NOT** be sized up via image editing at all! Please use the concommand `poster X` to take your screenshots (X is a render size multiplier, I typically set it to 2), and size down the screenshot in image editing software.
+All maps should be captured in a way where they can be described from one image. Some general guidelines;
+- Do not modify the map you're capturing at all. Disable your viewmodels, and keep all players/custom props/etc out of the picture.
+- Images should **NOT** be sized up via image editing at all! Please use the concommand `poster X` to take your screenshots (X is a render size multiplier, I typically set it to 2), and size down the screenshot in image editing software.
 
 Alongside each preview should be a .json file containing some details about the map itself. A `?` denotes that a field that is optional and can either be replaced with `null` or not included.
 ```jsonc
